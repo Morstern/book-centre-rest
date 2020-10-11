@@ -2,6 +2,9 @@ package pl.kamil.zielinski.bookcentrerest.client;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.NoArgsConstructor;
 import pl.kamil.zielinski.bookcentrerest.purchase.PurchaseEntity;
 
 import javax.persistence.*;
@@ -12,6 +15,9 @@ import java.util.Objects;
 @Entity
 @Table(name = "client", schema = "bookcentre")
 @JsonIgnoreProperties({"purchases"})
+@Builder
+@AllArgsConstructor
+@NoArgsConstructor
 public class ClientEntity {
     private int clientId;
     private String email;
@@ -35,7 +41,7 @@ public class ClientEntity {
 
     @Basic
     @Email
-    @Column(name = "email", nullable = true, length = 100)
+    @Column(name = "email", length = 100)
     public String getEmail() {
         return email;
     }
@@ -45,7 +51,7 @@ public class ClientEntity {
     }
 
     @Basic
-    @Column(name = "password", nullable = true, length = 100)
+    @Column(name = "password", length = 100)
     public String getPassword() {
         return password;
     }
@@ -55,7 +61,7 @@ public class ClientEntity {
     }
 
     @Basic
-    @Column(name = "forename", nullable = true, length = 30)
+    @Column(name = "forename", length = 30)
     public String getForename() {
         return forename;
     }
@@ -65,7 +71,7 @@ public class ClientEntity {
     }
 
     @Basic
-    @Column(name = "surname", nullable = true, length = 30)
+    @Column(name = "surname", length = 30)
     public String getSurname() {
         return surname;
     }
@@ -75,7 +81,7 @@ public class ClientEntity {
     }
 
     @Basic
-    @Column(name = "phone", nullable = true, length = 9)
+    @Column(name = "phone", length = 9)
     public String getPhone() {
         return phone;
     }
@@ -85,7 +91,7 @@ public class ClientEntity {
     }
 
     @Basic
-    @Column(name = "address", nullable = true, length = 150)
+    @Column(name = "address", length = 150)
     public String getAddress() {
         return address;
     }

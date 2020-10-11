@@ -36,7 +36,7 @@ public class PurchaseEntity {
     }
 
     @Basic
-    @Column(name = "client_id", nullable = true)
+    @Column(name = "client_id")
     public Integer getClientId() {
         return clientId;
     }
@@ -113,4 +113,6 @@ public class PurchaseEntity {
                 ", orderDate=" + orderDate +
                 '}';
     }
+    
+
 }

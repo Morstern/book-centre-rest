@@ -1,11 +1,18 @@
 package pl.kamil.zielinski.bookcentrerest.book;
 
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.NoArgsConstructor;
+
 import javax.persistence.*;
 import java.math.BigDecimal;
 import java.util.Objects;
 
 @Entity
 @Table(name = "book", schema = "bookcentre")
+@Builder
+@AllArgsConstructor
+@NoArgsConstructor
 public class BookEntity {
     private int bookId;
     private String title;
@@ -27,7 +34,7 @@ public class BookEntity {
 
 
     @Basic
-    @Column(name = "title", nullable = true, length = 100)
+    @Column(name = "title", length = 100)
     public String getTitle() {
         return title;
     }
@@ -38,7 +45,7 @@ public class BookEntity {
 
 
     @Basic
-    @Column(name = "amount", nullable = true)
+    @Column(name = "amount")
     public Integer getAmount() {
         return amount;
     }
@@ -49,7 +56,7 @@ public class BookEntity {
 
 
     @Basic
-    @Column(name = "author", nullable = true, length = 100)
+    @Column(name = "author", length = 100)
     public String getAuthor() {
         return author;
     }
@@ -60,7 +67,7 @@ public class BookEntity {
 
 
     @Basic
-    @Column(name = "description", nullable = true, length = 100)
+    @Column(name = "description", length = 100)
     public String getDescription() {
         return description;
     }
@@ -71,7 +78,7 @@ public class BookEntity {
 
 
     @Basic
-    @Column(name = "price", nullable = true, precision = 2)
+    @Column(name = "price", precision = 2)
     public BigDecimal getPrice() {
         return price;
     }
@@ -98,4 +105,5 @@ public class BookEntity {
     public int hashCode() {
         return Objects.hash(bookId, title, amount, author, description, price);
     }
+
 }

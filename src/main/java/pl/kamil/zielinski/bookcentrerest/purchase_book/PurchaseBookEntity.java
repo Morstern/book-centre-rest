@@ -38,7 +38,7 @@ public class PurchaseBookEntity {
     }
 
     @Basic
-    @Column(name = "amount", nullable = true)
+    @Column(name = "amount")
     public Integer getAmount() {
         return amount;
     }
@@ -81,4 +81,5 @@ public class PurchaseBookEntity {
                 ", amount=" + amount +
                 '}';
     }
+
 }
